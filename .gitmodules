@@ -1,0 +1,3 @@
+[submodule "emacs/lisp/use-package"]
+	path = emacs/lisp/use-package
+	url = https://github.com/jwiegley/use-package.git
