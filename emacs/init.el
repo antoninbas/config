@@ -5,6 +5,9 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+(setq frame-background-mode 'dark)
+(set-face-attribute 'font-lock-keyword-face nil :weight 'bold)
+
 (add-to-list 'load-path "~/.emacs.d/lisp/")
 (add-to-list 'load-path "~/.emacs.d/lisp/use-package/")
 (require 'column-marker)
