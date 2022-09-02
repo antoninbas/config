@@ -37,7 +37,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (yaml-mode dumb-jump go-mode))))
+ '(package-selected-packages '(terraform-mode yaml-mode dumb-jump go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -48,9 +48,10 @@
 ;; this does not seem to install packages automatically so we use use-package
 ;; (package-install-selected-packages)
 (require 'use-package)
-(use-package dumb-jump      :ensure t)
-(use-package go-mode        :ensure t)
-(use-package yaml-mode      :ensure t)
+(use-package dumb-jump           :ensure t)
+(use-package go-mode             :ensure t)
+(use-package yaml-mode           :ensure t)
+(use-package terraform-mode      :ensure t)
 
 (dumb-jump-mode)
 ;; because of iterm
