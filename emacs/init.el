@@ -37,7 +37,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages '(scala-mode terraform-mode yaml-mode dumb-jump go-mode)))
+ '(package-selected-packages
+   '(typescript-mode scala-mode terraform-mode yaml-mode dumb-jump go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -53,6 +54,7 @@
 (use-package yaml-mode           :ensure t)
 (use-package terraform-mode      :ensure t)
 (use-package scala-mode          :ensure t)
+(use-package typescript-mode     :ensure t)
 
 (dumb-jump-mode)
 ;; because of iterm
@@ -67,3 +69,6 @@
 
 ;; disable chang log mode
 (rassq-delete-all 'change-log-mode auto-mode-alist)
+
+;; force typescript-mode for .tsx files
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
