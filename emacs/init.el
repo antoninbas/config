@@ -38,7 +38,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(typescript-mode scala-mode terraform-mode yaml-mode dumb-jump go-mode)))
+   '(protobuf-mode typescript-mode scala-mode terraform-mode yaml-mode dumb-jump go-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -55,6 +55,7 @@
 (use-package terraform-mode      :ensure t)
 (use-package scala-mode          :ensure t)
 (use-package typescript-mode     :ensure t)
+(use-package protobuf-mode       :ensure t)
 
 (dumb-jump-mode)
 ;; because of iterm
@@ -72,3 +73,11 @@
 
 ;; force typescript-mode for .tsx files
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+
+;; use 2-space indentation for .proto
+(defconst my-protobuf-style
+  '((c-basic-offset . 2)
+    (indent-tabs-mode . nil)))
+(add-hook 'protobuf-mode-hook
+  (lambda () (c-add-style "my-style" my-protobuf-style t)))
+(add-to-list 'auto-mode-alist '("\\.proto\\'" . protobuf-mode))
